@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-variant": "#ebe1d3", "tertiary-container": "#37221b", "primary-fixed": "#ffd9dd", "inverse-on-surface": "#f9efe1", "tertiary-fixed": "#ffdbd0", "on-secondary-fixed-variant": "#5e4200", "on-secondary-container": "#785500", "on-error": "#ffffff", "on-primary": "#ffffff", "secondary-container": "#ffcd70", "outline": "#857374", "on-surface": "#1f1b12", "on-secondary": "#ffffff", "inverse-primary": "#ffb2bc", "error": "#ba1a1a", "secondary": "#7c5800", "surface-container-highest": "#ebe1d3", "on-tertiary": "#ffffff", "surface": "#fff8f1", "surface-tint": "#8e4a55", "surface-container-lowest": "#ffffff", "on-surface-variant": "#524344", "on-tertiary-fixed": "#2a1710", "secondary-fixed": "#ffdea6", "error-container": "#ffdad6", "surface-container-low": "#fcf2e3", "surface-container": "#f6edde", "surface-bright": "#fff8f1", "on-secondary-fixed": "#271900", "outline-variant": "#d7c1c3", "tertiary-fixed-dim": "#e2bfb4", "primary-container": "#4a1420", "on-primary-fixed-variant": "#71333e", "primary-fixed-dim": "#ffb2bc", "surface-container-high": "#f1e7d8", "on-primary-fixed": "#3a0815", "on-primary-container": "#c67884", "on-error-container": "#93000a", "on-tertiary-container": "#a6877e", "tertiary": "#200e08", "on-background": "#1f1b12", "secondary-fixed-dim": "#f0bf64", "primary": "#2e010c", "surface-dim": "#e2d9ca", "inverse-surface": "#353026", "background": "#fff8f1", "on-tertiary-fixed-variant": "#5a4139" }, borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" }, spacing: { "gutter-desktop": "2rem", "margin-tablet": "2.5rem", "space-xs": "0.25rem", "margin-desktop": "5rem", "space-3xl": "6rem", gutter: "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", margin: "1.25rem", "space-xl": "2.5rem", "space-2xl": "4rem", "space-sm": "0.5rem" }, fontFamily: { "display-hero": ["Playfair Display"], "body-lg": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "price-callout": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "display-hero-mobile": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"] }, fontSize: { "display-hero": ["56px", { lineHeight: "64px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0", fontWeight: "400" }], "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "0", fontWeight: "500" }], "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.1em", fontWeight: "700" }], "price-callout": ["22px", { lineHeight: "26px", letterSpacing: "0.02em", fontWeight: "700" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "600" }], "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0.01em", fontWeight: "400" }], "display-hero-mobile": ["36px", { lineHeight: "44px", letterSpacing: "0", fontWeight: "600" }], "headline-md": ["26px", { lineHeight: "34px", letterSpacing: "0", fontWeight: "500" }], "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "400" }] } } } };</script>
+</head>
+
+<body
+    class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+    <header class="fixed top-0 left-0 right-0 z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="bg-primary text-surface py-2 px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
+                <div class="flex items-center gap-space-xs text-center md:text-left"><span
+                        class="material-symbols-outlined text-secondary-fixed text-sm">auto_awesome</span>
+                    <p class="font-label-sm text-surface text-[11px] uppercase tracking-widest font-medium">Royal
+                        Festive Privilege: Compliment Silver Foil Packaging &amp; Free Climate-Controlled Delivery Above
+                        ₹999 | Code: <span class="text-secondary-fixed font-bold tracking-wider">MITHAASROYAL</span></p>
+                </div>
+                <div class="hidden md:flex items-center gap-6 font-label-sm text-surface text-[11px] tracking-wider"><a
+                        class="flex items-center gap-1.5 hover:text-secondary-fixed transition-colors"
+                        href="tel:+918006484227"><span
+                            class="material-symbols-outlined text-xs text-secondary-fixed">support_agent</span><span>Concierge:
+                            +91 800 648 4227</span></a>
+                    <div class="flex items-center gap-1.5 pl-4 border-l border-outline-variant/30"><span
+                            class="text-surface/80">CURRENCY:</span><span class="font-bold text-secondary-fixed">INR
+                            (₹)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface/90 backdrop-blur-xl transition-all duration-300">
+            <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-space-md"><a class="flex items-center gap-3 group" data-path="home"
+                        href="#"><img alt="MITHAAS Royal Logo" class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1XBWGBPYKOIZS6Uzcnuv1xE4PIqq9fqdaxdwU1VOmhcqVoFqHKmxpQk6P1iPCKmwhx2GyB6Zrxd3MLzuojsCFZzVCKfIMrsFab2FhfA1vwdlAnONRdpHvnT6zGjm0aI-TJbN9nMouMhbJkB5NiLIx9rn2vD15fticX-vCrJ4Poc9XyI_i-ebXBFUkQsFN78x04tlhrFpcg546cXT5jP5NYbH4n6wukX9iYvN7vc86Fh" />
+                        <div class="flex flex-col"><span
+                                class="font-headline-sm text-primary tracking-wide leading-none group-hover:text-primary-container transition-colors">MITHAAS</span><span
+                                class="font-label-sm text-[9px] uppercase tracking-[0.25em] text-secondary mt-0.5">Royal
+                                Indian Sweet Atelier</span></div>
+                    </a></div>
+                <nav class="hidden xl:flex items-center gap-space-lg"
+                    data-active-classes="text-primary font-bold after:w-full"><a aria-current="page"
+                        class="transition-colors tracking-wider uppercase relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-secondary after:transition-all text-primary font-bold after:w-full"
+                        data-path="home" href="#">Home</a><a
+                        class="font-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wider uppercase text-xs relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full"
+                        data-path="shop-all-sweets" href="#">Shop</a><a
+                        class="font-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wider uppercase text-xs relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full"
+                        data-path="categories" href="#">Categories</a><a
+                        class="font-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wider uppercase text-xs relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full"
+                        data-path="festive-gift-hampers" href="#">Festive Gift Hampers</a><a
+                        class="font-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wider uppercase text-xs relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full"
+                        data-path="heritage-story" href="#">Heritage Story</a><a
+                        class="font-label-lg text-on-surface-variant hover:text-primary transition-colors tracking-wider uppercase text-xs relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full"
+                        data-path="contact" href="#">Contact</a></nav>
+                <div class="flex items-center gap-space-md">
+                    <div
+                        class="hidden md:flex items-center bg-surface-container px-3 py-1.5 rounded-lg w-52 focus-within:w-64 transition-all duration-300">
+                        <span class="material-symbols-outlined text-secondary text-lg mr-2">search</span><input
+                            class="bg-transparent font-body-sm text-xs text-on-surface placeholder:text-on-surface-variant focus:outline-none w-full"
+                            placeholder="Search sweets, mithai..." type="text" /></div>
+                    <div class="flex items-center gap-space-sm"><a
+                            class="relative p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant hover:text-primary flex items-center justify-center"
+                            data-path="wishlist" href="#"><span
+                                class="material-symbols-outlined text-xl">favorite</span><span
+                                class="absolute top-1 right-1 w-4 h-4 bg-primary text-on-primary font-label-sm text-[9px] rounded-full flex items-center justify-center font-bold">2</span></a><a
+                            class="flex items-center gap-2 bg-primary text-on-primary pl-3 pr-2 py-1.5 rounded-lg hover:bg-primary-container transition-all group"
+                            data-path="cart" href="#">
+                            <div class="flex flex-col text-left"><span
+                                    class="font-label-sm text-[9px] uppercase tracking-wider text-secondary-fixed">Atelier
+                                    Bag</span><span
+                                    class="font-headline-sm text-xs font-bold leading-none text-surface">₹1,850</span>
+                            </div>
+                            <div
+                                class="w-5 h-5 bg-secondary text-primary font-label-sm text-[10px] rounded-full flex items-center justify-center font-bold ml-1">
+                                3</div>
+                        </a><a class="flex items-center gap-2 pl-2 rounded-full hover:opacity-90 transition-opacity"
+                            data-path="account" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxOFD8og5_puo3XdHikDHoznAoaiZzJ1XAAOK8-poH59jJvYMaUMgHRwYhpcfibwHu5Z0iPxyXUbGow2xUIzy44uXVFCVY4o76NKpZelCA5ThoO7OEA8gFE5asHsBqb2h_58L4f6m4Mkfu-lsGDGmxghq9ClpM9pEdOL80AXYT_wmzEE8i0SBW2COP8SUHxMlBt4NvOaxWcxRIy8yvgFi9KLb8Kx1ejpFnuSWbUE4" /><span
+                                class="material-symbols-outlined text-xs text-on-surface-variant hidden lg:inline">expand_more</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-28 bg-surface min-h-[calc(100vh-112px)]">
+        <div class="flex flex-col w-full">
+            <!-- Top Notification Toast (Fixed Bottom Right) -->
+            <div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-500 ease-out pointer-events-none flex items-center gap-4 bg-primary-container text-on-primary px-5 py-4 rounded-xl shadow-2xl"
+                id="cartToast">
+                <div
+                    class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-bold shadow-md">
+                    <span class="material-symbols-outlined text-xl">done_all</span>
+                </div>
+                <div>
+                    <h4 class="font-headline-sm text-sm text-secondary-fixed font-semibold tracking-wide">Added to Royal
+                        Atelier Basket</h4>
+                    <p class="font-body-sm text-xs text-surface/90" id="toastMessage">Royal Silver Vark Kaju Katli
+                        (500g) selected.</p>
+                </div>
+                <div
+                    class="ml-2 pl-3 border-l border-white/10 text-xs font-label-md text-secondary-fixed uppercase tracking-wider">
+                    Disp. 4h
+                </div>
+            </div>
+            <!-- SECTION 1: Grand Royal Hero Banner -->
+            <section class="relative w-full overflow-hidden bg-primary text-on-primary">
+                <!-- Atmospheric Ambient Glows -->
+                <div
+                    class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-40 right-10 w-[500px] h-[500px] rounded-full bg-primary-container/80 blur-3xl pointer-events-none">
+                </div>
+                <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <!-- Hero Text & Value Props -->
+                        <div class="lg:col-span-7 flex flex-col space-y-6">
+                            <div
+                                class="inline-flex items-center gap-2 self-start bg-secondary-fixed/10 px-3.5 py-1.5 rounded-full">
+                                <span class="material-symbols-outlined text-secondary-fixed text-sm">stars</span>
+                                <span
+                                    class="font-label-sm text-secondary-fixed uppercase tracking-[0.2em] text-[11px] font-bold">Imperial
+                                    Confectionery Tradition • Est. 1942</span>
+                            </div>
+                            <h1
+                                class="font-headline-lg text-4xl lg:text-5xl lg:leading-[1.15] text-surface font-semibold tracking-tight">
+                                Artisanal Confectionery Reimagined in Pure <span
+                                    class="italic text-secondary-fixed font-display-hero">Shuddh Desi Ghee</span>
+                            </h1>
+                            <p class="font-body-lg text-base lg:text-lg text-surface/80 max-w-2xl leading-relaxed">
+                                Handcrafted with heirloom recipes from royal Rajputana &amp; Awadh kitchens, adorned
+                                with edible silver vark, single-origin Iranian pistachios, and organic Kashmiri Mongra
+                                saffron.
+                            </p>
+                            <!-- CTAs -->
+                            <div class="flex flex-wrap items-center gap-4 pt-2">
+                                <a class="bg-secondary text-primary font-label-lg text-xs uppercase tracking-wider px-8 py-4 rounded-lg font-bold shadow-xl hover:bg-secondary-fixed transition-all flex items-center gap-2 group"
+                                    href="#masterpieces">
+                                    <span>Explore Sweets Atelier</span>
+                                    <span
+                                        class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">east</span>
+                                </a>
+                                <a class="bg-transparent text-secondary-fixed hover:bg-secondary-fixed/10 font-label-lg text-xs uppercase tracking-wider px-7 py-4 rounded-lg font-semibold transition-all flex items-center gap-2"
+                                    href="#hamper-customizer">
+                                    <span class="material-symbols-outlined text-base">card_giftcard</span>
+                                    <span>Curate Festive Hamper</span>
+                                </a>
+                            </div>
+                            <!-- Luxury Metric Badges -->
+                            <div class="grid grid-cols-3 gap-3 pt-6">
+                                <div class="bg-primary-container/70 p-3.5 rounded-xl shadow-sm flex items-center gap-3">
+                                    <div
+                                        class="w-9 h-9 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed shrink-0">
+                                        <span class="material-symbols-outlined text-lg">verified</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-label-md text-xs font-bold text-surface">100% Organic</p>
+                                        <p class="font-body-sm text-[11px] text-surface/70 leading-none mt-0.5">A2 Gir
+                                            Cow Ghee</p>
+                                    </div>
+                                </div>
+                                <div class="bg-primary-container/70 p-3.5 rounded-xl shadow-sm flex items-center gap-3">
+                                    <div
+                                        class="w-9 h-9 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed shrink-0">
+                                        <span class="material-symbols-outlined text-lg">eco</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-label-md text-xs font-bold text-surface">Preservative Free</p>
+                                        <p class="font-body-sm text-[11px] text-surface/70 leading-none mt-0.5">Zero
+                                            Additives</p>
+                                    </div>
+                                </div>
+                                <div class="bg-primary-container/70 p-3.5 rounded-xl shadow-sm flex items-center gap-3">
+                                    <div
+                                        class="w-9 h-9 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed shrink-0">
+                                        <span class="material-symbols-outlined text-lg">rocket_launch</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-label-md text-xs font-bold text-surface">Express Dispatch</p>
+                                        <p class="font-body-sm text-[11px] text-surface/70 leading-none mt-0.5">
+                                            Cold-Chain Insulated</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Hero Visual Showcase -->
+                        <div class="lg:col-span-5 relative">
+                            <div class="relative mx-auto max-w-md lg:max-w-none">
+                                <div class="overflow-hidden rounded-2xl shadow-2xl bg-primary-container relative">
+                                    <img class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700"
+                                        data-alt="A grand royal flatlay arrangement of traditional Indian mithai sweets including silver vark leafed kaju katli, golden saffron motichoor ladoo, and pistachio peda in handcrafted brass royal thali on deep maroon velvet fabric, cinematic warm studio luxury food photography, amber lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBthQDfASX68Usy7DIx-K6vPCSCDfe9_w2b4Rmh-GVdFTnLs74GnJ8y4dtrvICrc9j0t2MQ4HiRGgFvd2K1pmxAfBZYl5KdJ-qZsfzryam_NfZPfHAnpl0CraGqdkqqVuNtwgkkAn8PB3z4i66s8Q7CzCihV8IIFMeHWB3d3Y2I1poFHp5FPH9DUEU_OgfFDogwHFgEqJueAZC3EoW0plxsqYXkIpbbdp88AvQNL7c" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-80">
+                                    </div>
+                                    <!-- Floating Price Badge -->
+                                    <div
+                                        class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-surface/95 backdrop-blur-md text-on-surface shadow-xl flex items-center justify-between">
+                                        <div>
+                                            <span
+                                                class="font-label-sm text-[10px] uppercase tracking-widest text-secondary font-bold">Featured
+                                                Atelier Creation</span>
+                                            <h3 class="font-headline-sm text-sm font-semibold text-primary">Darbar Kaju
+                                                Katli &amp; Kesar Peda Thali</h3>
+                                        </div>
+                                        <div class="text-right">
+                                            <span
+                                                class="font-headline-sm text-base font-bold text-primary">₹1,850</span>
+                                            <span
+                                                class="block font-body-sm text-[10px] text-on-surface-variant">Signature
+                                                Velvet Box</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Floating Seal Badge -->
+                                <div
+                                    class="absolute -top-4 -right-4 bg-secondary text-primary w-20 h-20 rounded-full flex flex-col items-center justify-center shadow-xl">
+                                    <span class="material-symbols-outlined text-2xl">workspace_premium</span>
+                                    <span
+                                        class="font-label-sm text-[8px] uppercase tracking-widest font-extrabold text-center leading-tight">Shahi<br />Mohar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 2: Shop by Royal Categories -->
+            <section class="w-full py-20 bg-surface">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div>
+                            <span
+                                class="font-label-sm text-xs font-bold uppercase tracking-[0.25em] text-secondary">Imperial
+                                Collections</span>
+                            <h2 class="font-headline-lg text-3xl lg:text-4xl text-primary font-semibold mt-1">Shop by
+                                Royal Categories</h2>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant max-w-md">
+                            Curated across six ancestral culinary disciplines, cooked slowly in pure bronze kadhais with
+                            unadulterated ingredients.
+                        </p>
+                    </div>
+                    <!-- Categories Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Category Card 1 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Traditional diamond shaped Kaju Katli sweets covered with gleaming silver edible vark foil beside sliced Iranian green pistachios, luxurious macro confectionery photography, soft warm natural kitchen light"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhYdAVmxkGFIz4ThmvJ_Ck32Y73o91l57PRlEFjq93B3uZZ411O71VuxfIoFl53RG3KfDz1D_xohOQT8ObRQ6SVY1rhPh_DYQ-o6cKkCjFQDRfN0BYCyxLWVjCQrd8NlGoYA24aQgA7DQRt712yMQYLpZzyVzff2MYHVFpOdq9BBN8znQZZbhz_ypy_TgW3hqlmVvz0iunXb_paGF6lzpEqdX4B2_Pt3PjrhlK5PI" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-surface/90 text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">14
+                                    Varieties</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Kaju &amp; Dry Fruit Delicacies</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Kaju
+                                        Katli, Anjeer Roll, Pista Lauj &amp; Almond Pearls crafted with zero artificial
+                                        essence.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Card 2 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Golden orange royal motichoor ladoo made with pure desi ghee garnished with toasted melon seeds and green cardamom, close up culinary photography, amber glowing lighting"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEzsKoIK3BSXPjqdlwHSqSG47nFkb1RmWURSjCO4h-E9AbAugkStUR_hhuDNrWa3iIyeArKmCLyxWrnZF-d6f7m4BtyGced2ZsLBY2hTu31Kfs6V9OFuQ8jXOzv5Suha1s6xgOdc_D_WNHo701AGAqlh71ddwTS4_MQ9fUzB2jrU_gfXXZ3qEcrK4NzbP9EjPVGXjd2LNE9f23XGz5r09W8yaNbtbqrNphCcyTRzQ" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-surface/90 text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">11
+                                    Varieties</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Shuddh Ghee Ladoos</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                                        Motichoor, Besan Laddu, Gond Ladoo with roasted dry fruits and fragrant whole
+                                        spices.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Card 3 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Deep brown golden Gulab Jamun balls soaked in glistening rose cardamom syrup alongside creamy white saffron Rasmalai in brass bowl, opulent Indian sweet culinary still life"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAenVPlTQtdZPLYiadl3K35gxpt3wLS1rcFSrZwDEszTJHnl2su9H8UlD2Sx6hTL7WiUUYzqECbqaF2-hFnLc4g88CJwkJdJl_fmIq9N-4GvIM1mGxTFRm7U62KvEBFVbVgLfYsRu7Vbn1t9028Cy89Y_DFQY8woh2cQvhx-iI7u_psjA64QFwAYq3agMeSdoBOp-70iFRw6K_zj7cJ4V8X5Ku46wRsy50LlBSioUQ" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-surface/90 text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">9
+                                    Varieties</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Khoya &amp; Chhena Classics</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                                        Heirloom Gulab Jamun, Spongy Pahadi Rasgulla &amp; Angoori Kesar Rasmalai.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Card 4 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Rich textured Kalakand and Dodha barfi squares topped with sliced almonds and slivered pistachios, editorial gourmet dessert photoshoot, creamy neutral tones"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuzIMe21ZKi0KjZU6TZK6d1b0882bBe5w-5hv_0Lh5t_i06u-jTGB9jI1WKFOQvjKue-45Kk35ylXvTE0uNQc5wdL-cVNsB6QdG9oMbVtCdJdLzsoDF_HMxcwAGAloP2useHCklC3rdJaO9cQvJJXq6MNie91oy4watE1c_Pwv8gl59ra1Vu91D5x270ftmls3sGFkmfxU0H_Jc49QW4OnFV7gyQDXWncT-StXL54" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-surface/90 text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">16
+                                    Varieties</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Royal Barfi &amp; Milk Cake</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Kesar
+                                        Peda, Alwar Milk Cake, Dodha Barfi &amp; Malai Kalakand slow-simmered over
+                                        hours.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Card 5 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Luxurious velvet gift hamper box in royal maroon with golden filigree embellishments, brass lock clasp, filled with assorted Indian sweets jars and dry fruits, festival gifting concept"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxf9pS1mRSHAVd0tNLFctpmnshF-gSy5gl3xmjkjm2IQksoYf6-eBhH655fy2QEA-53LV-WPn5TT5GMeFx0oUziFLON8wYeUy3yUy1d7T3J-iWwnbeOuv8mU2wAI32ZRCFL0062Y7GF5Z4QOnHA4hVH7k6c7ENO7a69M_fzSkxAztdkA6zbExuf7ILhDfo-iGY0iAj3NcCIVsK2taekNmKgBb30CNQSihDgHiUEc" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-secondary-fixed text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Exclusive</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Festive Gifting Hampers</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">
+                                        Velvet Keepsake Boxes, Brass Trays &amp; Sovereign Gift Hampers with
+                                        personalized royal seals.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Card 6 -->
+                        <div
+                            class="group relative rounded-xl overflow-hidden bg-surface-container shadow-md hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer">
+                            <div class="relative h-60 overflow-hidden bg-surface-variant">
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    data-alt="Delicate traditional Bengali Sandesh confections and earthen pots of Mishti Doi sweetened yogurt with saffron strands, exquisite dessert photography, warm heritage tone"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgZwyOhXBZC8JhFrFzP7OIq4FPYTkopflcGKgqP-Ql6bPUZ6G1rdqFusTNyMSO5lpze6N5fFTFlw6H-8-2UltccOkYm53qSi3r58KpjScbSV1NTzB9QLhuwhZnjN25BGT11Zo1rXcl2CuUyrW9xwZ_XfMtVAJtkVYXozBMhtEsg9NeOQuC87eI9jTB8gnkw2Gdlt7UbekzTzecK6QR_4HCbJH0Deg7wxK4o1-L7NQ" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent">
+                                </div>
+                                <span
+                                    class="absolute top-4 right-4 bg-surface/90 text-primary font-label-sm text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">8
+                                    Varieties</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1 justify-between bg-surface-container-low">
+                                <div>
+                                    <h3
+                                        class="font-headline-sm text-lg text-primary font-semibold group-hover:text-secondary transition-colors">
+                                        Bengali Heritage Confections</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Nolen
+                                        Gur Sandesh, Malai Chamcham, and caramelized Mishti Doi made in clay vats.</p>
+                                </div>
+                                <div
+                                    class="mt-4 flex items-center text-secondary font-label-md text-xs font-bold gap-1 group-hover:gap-2 transition-all">
+                                    <span>Explore Collection</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 3: Bestselling Masterpieces (Interactive Product Grid) -->
+            <section class="w-full py-20 bg-surface-container-low" id="masterpieces">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <!-- Section Header with Filters -->
+                    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                        <div>
+                            <span
+                                class="font-label-sm text-xs font-bold uppercase tracking-[0.25em] text-secondary">Atelier
+                                Signatures</span>
+                            <h2 class="font-headline-lg text-3xl lg:text-4xl text-primary font-semibold mt-1">
+                                Bestselling Masterpieces</h2>
+                            <p class="font-body-sm text-sm text-on-surface-variant mt-2 max-w-xl">
+                                Each batch is slow-crafted between 4:00 AM and 8:00 AM each dawn using hand-selected
+                                harvest ingredients. Select your desired weight tier below.
+                            </p>
+                        </div>
+                        <!-- Filter Chips -->
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button
+                                class="bg-primary text-surface font-label-md text-xs px-4 py-2 rounded-full font-bold shadow-sm">All
+                                Sweets</button>
+                            <button
+                                class="bg-surface text-on-surface-variant hover:text-primary font-label-md text-xs px-4 py-2 rounded-full font-semibold shadow-sm transition-colors">Pure
+                                Ghee</button>
+                            <button
+                                class="bg-surface text-on-surface-variant hover:text-primary font-label-md text-xs px-4 py-2 rounded-full font-semibold shadow-sm transition-colors">Kaju
+                                &amp; Nut</button>
+                            <button
+                                class="bg-surface text-on-surface-variant hover:text-primary font-label-md text-xs px-4 py-2 rounded-full font-semibold shadow-sm transition-colors">Syrup
+                                Soaked</button>
+                        </div>
+                    </div>
+                    <!-- Products Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Product 1: Kaju Katli -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Royal Silver Vark Kaju Katli" data-p1000="1380" data-p250="380" data-p500="720">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Diamond cut Kaju Katli sweets layered with shining pure silver vark foil against dark marble background with whole Goan cashew nuts scattered, high contrast luxury dessert shot"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Ap7WUnB_83ALaNc8a1Yt2DuJ4eqHCsSvjuSdlwLhEV8HYJTdu4Hfltmaz78hVG3GlMWpv2mKP8pacW19ZUgFKpc06SnwC9O_V39r-ziGdeVEwDi07OYVfm8H-ODCIe8x-fTeARrkIoOhKY6t4BOtAkY7yxEh0DWrhNUDUB7rgpdojWZsAigV7Xj8EmigkbE5DPVF5QAKKS9yjbuRGIFWhAtV3or1m7Od1JPwpuU" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-primary text-secondary-fixed font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Royal
+                                        Classic</span>
+                                    <!-- Wishlist Button -->
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">4.9</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(1,420
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">A2
+                                            Ghee Infused</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Royal Silver Vark
+                                        Kaju Katli</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">Finest
+                                        Goan cashews ground to velvety smoothness, wrapped in certified silver vark.</p>
+                                    <!-- Weight Selector Chips -->
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '250g', 380)">250g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '500g', 720)">500g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '1kg', 1380)">1kg</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹380</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Royal Silver Vark Kaju Katli', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 2: Motichoor Ladoo -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Kesariya Shahi Motichoor Ladoo" data-p1000="790" data-p250="220" data-p500="420">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Traditional Kesariya Motichoor Ladoo pearls glowing in golden saffron tint garnished with silver foil and pistachios on ivory royal plate, luxury studio food photography"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBluXXuwJ92wIDa2TVQUFXJLYx6l5XvaRGbQnjFqS2855X0uZ8NgHKY24hUIPDw2PCXG0u7SHI_xvSQwnW2CGnrInzfyd2KV9IJLt6TmYxKGo3LsF2Iue0PzzeIJWAv7LpKvw_EUlTBh-84WsjhNCtw4F9nJpJCFEXvdmlWx7xo7pxylrt4CytZJviMMe8XNb45oOysWl-LvDiW3lBmYzNp90qKkiDpQ9K4VARl4" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-secondary text-primary font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Bestseller</span>
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">4.9</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(980
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Kashmiri
+                                            Kesar</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Kesariya Shahi
+                                        Motichoor Ladoo</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">Micro
+                                        gram flour pearls fried in pure cow ghee and steeped in saffron cardamom nectar.
+                                    </p>
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '250g', 220)">250g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '500g', 420)">500g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '1kg', 790)">1kg</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹220</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Kesariya Shahi Motichoor Ladoo', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 3: Gulab Jamun -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Heritage Gulab Jamun in Rose Water Syrup" data-p1000="450" data-p500="240">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Glistening Gulab Jamun floating in aromatic rose petal cardamom syrup inside an antique brass bowl, garnished with pistachios and edible gold leaf, royal Indian palace cuisine"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAimyy8aRNxxG8I_WaTFhePDYQ34JpT1w9hAyTIBmg-0GACGQVFSeZIWOyDCgLwdaB-kzphc8qZDPxQ6w1oZ57efG_FNz-m0FRsamPrUBa5zih7ComdIIGE4TTeCG0litbNnFeBVwoNhrQ9cgwKRpodNsqNb1hxM2sUvaYoUy6igVo31M1-5FLCrzBVgUn93kN5oOJMJHE2ajwneDDPrtrC5f-xvUzTW7zLfAh35Is" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-tertiary text-secondary-fixed font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Chef
+                                        Special</span>
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">4.9</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(840
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Kannauj
+                                            Gulab</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Heritage Gulab Jamun
+                                        in Rose Water Syrup</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
+                                        Slow-reduced whole milk mawa dumplings with aromatic Persian rose essence.</p>
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '500g', 240)">500g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '1kg', 450)">1kg</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹240</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Heritage Gulab Jamun', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 4: Angoori Rasmalai -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Saffron Infused Angoori Rasmalai" data-p500="290">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Delicate bite sized chhena rasmalai patties submerged in rich yellow saffron thickened rabdi milk, sprinkled with slivered almonds and green pistachios, cold dessert bowl"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFrPoQngPZ2qQVoYiYOko-PJUdzpWOzXsJhmQXKLgV4Vw2hT2pPZ8L7pcE5HeODAqP_iLF4EzLBkkEiFLzcmMZD3PtkRMuZlp2uGTQmWGX-x6xcOTZ3mdrRH90RukF25HIwlOOtbJwdzA_8t65SA2qxDlQXyVgIQR1VVY7OIEs6Td1UZcmPbrzDo_z1gaEEFlQ_BrN_qw9tUOsMexkcV0XhGRZ2hsG_YoDnmhhFn8" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-primary text-surface font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Royal
+                                        Classic</span>
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">5.0</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(620
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Chilled
+                                            Transit</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Saffron Infused
+                                        Angoori Rasmalai</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
+                                        Feather-light fresh cow milk chhena poached in saffron rabdi with crushed nuts.
+                                    </p>
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '500g', 290)">500g Tub</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹290</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Saffron Infused Angoori Rasmalai', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 5: Shahi Dry Fruit Barfi -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Shahi Dry Fruit Barfi with Iranian Pistachio" data-p250="420" data-p500="790">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Dense emerald green pistachio dry fruit barfi sweets layered with crushed almonds and figs with silver foil leafing on a traditional carved bronze platter, premium Indian confectionery"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-F0jITI3LTr2AWba4K25Yxc0vWAxzPJM-pZ7h7xibW5eAVu61LYDJmB2LUP0LkB2jQUlyl3G_I0lwIV_Bw_b1_3N5LrJsHSrX00DTjD77ovguc5fEi7LKzCZ3HJrj-ykyNkOpa9v7TFue3Sg_vtCrH3PWHHcNLUMSEi2rjO9AQoirU1yWCXk_Ssf100kxRBTUDbiSu4loKpuP6pT7Sf3vDJFxR_rLq2Hn1qp6g3w" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-secondary text-primary font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Zero
+                                        Refined Sugar</span>
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">4.8</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(510
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Natural
+                                            Figs</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Shahi Dry Fruit
+                                        Barfi with Iranian Pistachio</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">
+                                        Artisanal medley of Mamra almonds, royal pistachios, and organic dates with no
+                                        white sugar.</p>
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '250g', 420)">250g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '500g', 790)">500g</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹420</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Shahi Dry Fruit Barfi', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Product 6: Jodhpur Besan Ladoo -->
+                        <div class="product-card bg-surface-container-lowest rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative group"
+                            data-name="Jodhpur Besan Ladoo with Magaz &amp; Cardamom" data-p250="210" data-p500="390">
+                            <div>
+                                <div class="relative h-64 overflow-hidden bg-surface-variant">
+                                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        data-alt="Traditional coarse roasted Rajasthani Besan Ladoo spheres with visible melon seeds and slivered pistachios on brass thali, warm culinary lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDydCYbrn8EHE0Gz5KSaMnF80sgjnUYEJHSfseeIhzTe1fJQIRhqBiEjafTtkRfZ8EYdYbhmculOUAEMdYJ97eOuEVjg30--1RYJytKGTOH79XR45qXoJA37S4mey_xzpq2Sxfl98z-SenI2ZO1ogWtiHarfz6kC-05bUUKmAQynX4h4--HQPlC15IODBD9r0rS4FlZ9QRdjkA_hnca7SZ6zpqgKksDSqmTXyudeJE" />
+                                    <span
+                                        class="absolute top-4 left-4 bg-tertiary text-secondary-fixed font-label-sm text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Rajputana
+                                        Heritage</span>
+                                    <button
+                                        class="wishlist-btn absolute top-4 right-4 w-9 h-9 rounded-full bg-surface/90 text-on-surface-variant hover:text-error flex items-center justify-center shadow-md transition-colors"
+                                        onclick="toggleWishlist(this)">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center gap-1 text-secondary">
+                                            <span class="material-symbols-outlined text-sm fill-current"
+                                                style="font-variation-settings: 'FILL' 1;">star</span>
+                                            <span class="font-label-md text-xs font-bold text-on-surface">4.9</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">(1,190
+                                                Reviews)</span>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Danedar
+                                            Roast</span>
+                                    </div>
+                                    <h3 class="font-headline-sm text-lg font-semibold text-primary">Jodhpur Besan Ladoo
+                                        with Magaz &amp; Cardamom</h3>
+                                    <p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">Coarse
+                                        ground gram flour slow-roasted for 3 hours in bilona ghee with crunch seeds.</p>
+                                    <div class="mt-4 pt-4 border-t border-surface-container">
+                                        <span
+                                            class="block font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant font-bold mb-2">Select
+                                            Net Weight:</span>
+                                        <div class="flex items-center gap-2">
+                                            <button
+                                                class="weight-btn active-weight bg-primary text-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-bold transition-all"
+                                                onclick="selectWeight(this, '250g', 210)">250g</button>
+                                            <button
+                                                class="weight-btn bg-surface-container text-on-surface font-label-md text-xs px-3.5 py-1.5 rounded-full font-medium transition-all"
+                                                onclick="selectWeight(this, '500g', 390)">500g</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider block">Price</span>
+                                    <span
+                                        class="product-price font-headline-sm text-xl font-bold text-primary">₹210</span>
+                                </div>
+                                <button
+                                    class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-xs uppercase tracking-wider px-5 py-3 rounded-lg font-bold shadow-md transition-all flex items-center gap-2"
+                                    onclick="addToCart('Jodhpur Besan Ladoo', this)">
+                                    <span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                    <span>Add to Atelier</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 4: Festive Season Spotlight & Hamper Builder Banner -->
+            <section class="w-full py-20 bg-primary text-on-primary relative overflow-hidden" id="hamper-customizer">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                    <div class="bg-primary-container/80 rounded-2xl p-8 lg:p-14 shadow-2xl relative overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            <div class="lg:col-span-7 flex flex-col space-y-6">
+                                <div
+                                    class="inline-flex items-center gap-2 self-start bg-secondary-fixed/20 px-3 py-1 rounded-full">
+                                    <span
+                                        class="material-symbols-outlined text-secondary-fixed text-sm">celebration</span>
+                                    <span
+                                        class="font-label-sm text-secondary-fixed uppercase tracking-widest text-[11px] font-bold">Royal
+                                        Festive Gifting Concierge</span>
+                                </div>
+                                <h2
+                                    class="font-headline-lg text-3xl lg:text-4xl text-surface font-semibold leading-tight">
+                                    Bespoke Keepsake Hampers for Royal Weddings, Diwali &amp; Auspicious Milestones
+                                </h2>
+                                <p class="font-body-md text-surface/80 text-sm lg:text-base leading-relaxed">
+                                    Curate your own velvet-lined keepsake trunk with personalized brass nameplates, silk
+                                    ribbon detailing, and hand-selected sweets assortments. Delivered in
+                                    temperature-shielded royal crates nationwide.
+                                </p>
+                                <!-- Hamper Customizer Mini Matrix -->
+                                <div class="bg-surface/10 backdrop-blur-md p-5 rounded-xl space-y-4">
+                                    <span
+                                        class="font-label-sm text-secondary-fixed text-xs uppercase tracking-wider block font-bold">Select
+                                        4 Treats for Custom Sovereign Box:</span>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                        <label
+                                            class="cursor-pointer bg-surface/15 hover:bg-surface/25 p-2.5 rounded-lg flex items-center gap-2 text-xs font-label-md transition-colors">
+                                            <input checked="" class="accent-secondary rounded" type="checkbox" />
+                                            <span>Silver Kaju Katli</span>
+                                        </label>
+                                        <label
+                                            class="cursor-pointer bg-surface/15 hover:bg-surface/25 p-2.5 rounded-lg flex items-center gap-2 text-xs font-label-md transition-colors">
+                                            <input checked="" class="accent-secondary rounded" type="checkbox" />
+                                            <span>Kesar Motichoor</span>
+                                        </label>
+                                        <label
+                                            class="cursor-pointer bg-surface/15 hover:bg-surface/25 p-2.5 rounded-lg flex items-center gap-2 text-xs font-label-md transition-colors">
+                                            <input checked="" class="accent-secondary rounded" type="checkbox" />
+                                            <span>Pista Lauj</span>
+                                        </label>
+                                        <label
+                                            class="cursor-pointer bg-surface/15 hover:bg-surface/25 p-2.5 rounded-lg flex items-center gap-2 text-xs font-label-md transition-colors">
+                                            <input checked="" class="accent-secondary rounded" type="checkbox" />
+                                            <span>Anjeer Dry Fruit</span>
+                                        </label>
+                                    </div>
+                                    <!-- Privilege Code Callout -->
+                                    <div class="pt-2 flex flex-wrap items-center justify-between gap-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-label-sm text-[11px] text-surface/70 uppercase">Privilege
+                                                Code:</span>
+                                            <span
+                                                class="bg-secondary text-primary font-mono font-bold text-xs px-2.5 py-1 rounded">MITHAASROYAL</span>
+                                            <span class="font-body-sm text-xs text-secondary-fixed font-semibold">(15%
+                                                Atelier Privilege)</span>
+                                        </div>
+                                        <button
+                                            class="bg-secondary text-primary hover:bg-secondary-fixed font-label-lg text-xs uppercase tracking-wider px-6 py-2.5 rounded-lg font-bold shadow-lg transition-all flex items-center gap-2"
+                                            onclick="curateHamperToast()">
+                                            <span>Confirm Custom Hamper</span>
+                                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hamper Visual Imagery -->
+                            <div class="lg:col-span-5">
+                                <div class="relative rounded-xl overflow-hidden shadow-2xl bg-primary">
+                                    <img class="w-full h-80 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
+                                        data-alt="Exquisite velvet trunk luxury Diwali hamper box with brass lock open to display rows of dry fruits, silver leafed kaju sweets, and decorative brass diya lamps, dramatic warm festive lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKGgUC0w2dpVWafujsLHAN98Ww1tgXP5J9yeXzzYUFmnYP3lxCtm6b2bp8-HDMGLKyMSUc0sqvDEZmAy2Gvyx9jV1AkZzC7kl1vJ9FZIrAbepjELgQq-tZmSGXYvb-bmqZWjVT1ZAvEypyx94wx7xos2V_NcUgwN9xov8vH2-kyoC77JhTFDL1jkMhOn6JC1nuAHywO1281QfdF7vB1BEk0zqLyVXeKTvKb_nXzrI" />
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-4 left-4 right-4 bg-surface/95 backdrop-blur-md p-3.5 rounded-lg text-on-surface flex items-center justify-between">
+                                        <div>
+                                            <span class="font-headline-sm text-xs font-bold text-primary block">Shahi
+                                                Darbar Velvet Keepsake Trunk</span>
+                                            <span class="font-body-sm text-[11px] text-on-surface-variant">Includes 1kg
+                                                Mithai + 500g Dry Fruits</span>
+                                        </div>
+                                        <span class="font-headline-sm text-sm font-bold text-primary">₹2,850</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 5: The Atelier Craftsmanship ('Why Choose MITHAAS') -->
+            <section class="w-full py-20 bg-surface">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="font-label-sm text-xs font-bold uppercase tracking-[0.25em] text-secondary">The
+                            Sovereign Guarantee</span>
+                        <h2 class="font-headline-lg text-3xl lg:text-4xl text-primary font-semibold mt-1">Ancestral
+                            Purity, Uncompromised</h2>
+                        <p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed">
+                            From sourcing certified single-origin saffron in Pampore to slow-churning organic A2 curd
+                            into clarified butter, discover what renders MITHAAS worthy of sovereign banquets.
+                        </p>
+                    </div>
+                    <!-- 4 Pillars Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Pillar 1 -->
+                        <div
+                            class="bg-surface-container p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-secondary-fixed/20 flex items-center justify-center text-secondary mb-6">
+                                <span class="material-symbols-outlined text-3xl">schedule</span>
+                            </div>
+                            <h3 class="font-headline-sm text-base font-semibold text-primary mb-2">Freshly Handcrafted
+                                Daily</h3>
+                            <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                                Every batch is kneaded, rolled, and slow-churned starting at 4:00 AM every morning. We
+                                never sell frozen or stored confections.
+                            </p>
+                            <span
+                                class="mt-4 font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Zero
+                                Day Old Policy</span>
+                        </div>
+                        <!-- Pillar 2 -->
+                        <div
+                            class="bg-surface-container p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-secondary-fixed/20 flex items-center justify-center text-secondary mb-6">
+                                <span class="material-symbols-outlined text-3xl">local_florist</span>
+                            </div>
+                            <h3 class="font-headline-sm text-base font-semibold text-primary mb-2">Single-Origin Kesar
+                                &amp; Cashews</h3>
+                            <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                                Finest Grade-A Mongra Saffron harvested from Pampore valleys and plump whole W180
+                                cashews from Goa’s coastal groves.
+                            </p>
+                            <span
+                                class="mt-4 font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Direct
+                                Farm Traceable</span>
+                        </div>
+                        <!-- Pillar 3 -->
+                        <div
+                            class="bg-surface-container p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-secondary-fixed/20 flex items-center justify-center text-secondary mb-6">
+                                <span class="material-symbols-outlined text-3xl">menu_book</span>
+                            </div>
+                            <h3 class="font-headline-sm text-base font-semibold text-primary mb-2">Heirloom Rajgharana
+                                Recipes</h3>
+                            <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                                Preserved over 4 generations of Master Halwais, maintaining exact simmering durations
+                                and botanical spices without short cuts.
+                            </p>
+                            <span
+                                class="mt-4 font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Since
+                                1942 Heritage</span>
+                        </div>
+                        <!-- Pillar 4 -->
+                        <div
+                            class="bg-surface-container p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-secondary-fixed/20 flex items-center justify-center text-secondary mb-6">
+                                <span class="material-symbols-outlined text-3xl">ac_unit</span>
+                            </div>
+                            <h3 class="font-headline-sm text-base font-semibold text-primary mb-2">Climate-Controlled
+                                Packing</h3>
+                            <p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                                Insulated aroma-lock tins with food-grade foil shields, ensuring peak freshness across
+                                transit anywhere across India.
+                            </p>
+                            <span
+                                class="mt-4 font-label-sm text-[10px] text-secondary font-bold uppercase tracking-wider">Tamper-Proof
+                                Gold Seal</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 6: Royal Patronage & Testimonials -->
+            <section class="w-full py-20 bg-surface-container-low">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="text-center max-w-2xl mx-auto mb-14">
+                        <span
+                            class="font-label-sm text-xs font-bold uppercase tracking-[0.25em] text-secondary">Imperial
+                            Accolades</span>
+                        <h2 class="font-headline-lg text-3xl lg:text-4xl text-primary font-semibold mt-1">Patronage
+                            Across Royal Households</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Testimonial 1 -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-1 text-secondary mb-4">
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-xs lg:text-sm text-on-surface leading-relaxed italic">
+                                    "We ordered 250 customized velvet gift hampers for our daughter’s wedding in
+                                    Udaipur. Guests are still talking about the fragrance of the Kesariya Motichoor and
+                                    the delicacy of the silver leaf katli. Supreme quality."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6 pt-6 border-t border-surface-container">
+                                <img class="w-11 h-11 rounded-full object-cover"
+                                    data-alt="Portrait of an elegant Indian woman in silk attire smiling warmly, high resolution patron photograph"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYEX4LI6PSFch3liLlDO3SR15qTGC2doVc9JJX17KAK1LeNk6ywoT0xwTHNenLc7mZsiyMJ9il94sjFNta7sVH0HYQnWLnlxi05Fo_dMA828fQr5sDN851x0y7w4LqyHAGXegsQ38Dqw-e9GTjQNezBevp0wPPGS7xyUwyEt1v4YBjDwpbnCT8qxC9x5pZzKT2isC-5_qAGmyElXpqLbVSEmZ5qRhkMA8glJspNXg" />
+                                <div>
+                                    <h4 class="font-headline-sm text-sm font-semibold text-primary">Maharani Gayatri
+                                        Singhania</h4>
+                                    <p class="font-body-sm text-xs text-on-surface-variant">Mumbai • Verified Patron</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-1 text-secondary mb-4">
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-xs lg:text-sm text-on-surface leading-relaxed italic">
+                                    "The aroma when opening the sealed tin took me right back to our ancestral haveli in
+                                    Lucknow. Pure desi ghee has a unmistakable warmth that no commercial brand can
+                                    recreate. MITHAAS is unmatched."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6 pt-6 border-t border-surface-container">
+                                <img class="w-11 h-11 rounded-full object-cover"
+                                    data-alt="Portrait of a distinguished Indian gentleman in tailored Nehru jacket smiling respectfully, verified customer portrait"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI8ofAjTdGDr6IGcVe1aTF6aS9eh7glbiMynHnNhTExc4DL1GjB-rV-b8VvWW7tjxjR_vXcAkUxx0hu8ZB-5ZUIiKULYQCHDMxgur8dUJ0Iv-9xm2u0LDPNjagdXG4bLvlZzFJ7KwmgrQcYsBX-DmM_a3xag2sI2DpdxuUuBaScgq9KMXdihYV8Qjc7s_2WE5P3gJiKOpOYxfyidkWJ7ZUXRp_cjEVOSVIaVxH-og" />
+                                <div>
+                                    <h4 class="font-headline-sm text-sm font-semibold text-primary">Vikramaditya Roy
+                                    </h4>
+                                    <p class="font-body-sm text-xs text-on-surface-variant">New Delhi • Verified Patron
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl shadow-md flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-1 text-secondary mb-4">
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                    <span class="material-symbols-outlined text-sm fill-current"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                                <p class="font-body-md text-xs lg:text-sm text-on-surface leading-relaxed italic">
+                                    "Climate-controlled courier arrived in Bengaluru within 24 hours of batch dispatch.
+                                    The Gulab Jamun was tender and the Angoori Rasmalai was impeccably chilled. Truly
+                                    royal standards."
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6 pt-6 border-t border-surface-container">
+                                <img class="w-11 h-11 rounded-full object-cover"
+                                    data-alt="Portrait of a young Indian executive woman in ivory professional attire, customer testimonial headshot"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ZJHvO0AQ99mCtdcxtm2WPnifdb4oFYu15Z2zGqN4UJvlicpTQSpQ307yCpJgBiW6v7wFZDuoMbgniQ2o6YjgVr-OCiKLXJbDtWyj-bJe_Bqxp8ijTQ-DxxOm5n3PRE7L2KjdKuc6HLYeAp3WNuB0ufiR-17MbDbliBz-zTcgubfmhAoQYeEUhvKSA0TdGvOgshfMIIB_nXbBhP6OW8qG71E_8WJBvoj_eZZ0dOU" />
+                                <div>
+                                    <h4 class="font-headline-sm text-sm font-semibold text-primary">Ananya Krishnamurthy
+                                    </h4>
+                                    <p class="font-body-sm text-xs text-on-surface-variant">Bengaluru • Verified Patron
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION 7: Social Showcase / Instagram Atelier -->
+            <section class="w-full py-20 bg-surface">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                        <div>
+                            <span
+                                class="font-label-sm text-xs font-bold uppercase tracking-[0.25em] text-secondary">Visual
+                                Diary</span>
+                            <h2 class="font-headline-lg text-2xl lg:text-3xl text-primary font-semibold mt-1">
+                                @mithaas.royal.atelier</h2>
+                        </div>
+                        <a class="inline-flex items-center gap-2 font-label-md text-xs text-secondary hover:text-primary transition-colors font-bold uppercase tracking-wider"
+                            href="#">
+                            <span>Join Imperial Circle on Instagram</span>
+                            <span class="material-symbols-outlined text-sm">open_in_new</span>
+                        </a>
+                    </div>
+                    <!-- Instagram Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="relative group overflow-hidden rounded-xl h-60 bg-surface-variant">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Master halwai confectioner hand applying delicate pure silver vark foil over smooth cashew diamond sweets in an artisanal workshop, close up editorial capture"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHr98b4yhyH_5P7ezHCvOntDkMdRhjzwZptwYrzs44bIAMw5s2smIll0moE_cMEGOlNFvZ31Ogmy1_B8DKxQwLD5zSClzRQ07wkYSLhWL2C_QYlDI7IRS6FaeGa7FwXJFudZxox71RH_qEhuK_N4lOYScgvAPsHz6MgASpxSqMx2_LnOZX00AD05PcxbrIrIvEkHGm_nqRMnQJO5X67ZbAUACd-5D5CJy0v-hAA8I" />
+                            <div
+                                class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface">
+                                <span class="material-symbols-outlined text-2xl">favorite</span>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl h-60 bg-surface-variant">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Lavish royal Indian wedding dessert banquet display with multiple tiered silver stands loaded with artisanal mithai confections and fresh jasmine flower garlands"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHnQ4Tqz-ybG5RlUYOJ1-D9yXPY-BfHI59AJW4Vfw0g2DX1PhpCpQaHXCegTo1RRUH0mJN27Jcstm0Njr27aVDgWD3Su6Io_J2BOByXOytQG_Ydlma7S2FJIxsstJjjy88QfJ9JR2mTGba2FfK5T6VT9V6qlbW-tPaeqZmO7QvTCvlaM44rtAVEpopO1St3S_T5n9L4wNf-SpM0me5d2hrdjSNSHWHyOkaZkvpu60" />
+                            <div
+                                class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface">
+                                <span class="material-symbols-outlined text-2xl">favorite</span>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl h-60 bg-surface-variant">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Unboxing of a rich red velvet gift box revealing personalized gold stamped envelope and brass canisters filled with dry fruit confections"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEYwk8xQkseZbu9I4RZhAJ84n1mv3sp5gmE_CaJ_MOTMkgC2r3CDvEQKH4s3vsvuXVTlCktolltMTyUL5j17OEeYTtmIimowDIs25wbIrkK4MTJ58uHjl4J3A_NydxQWZZ6HeBGXIDE1uWSzoFGGZ2HiodyJEROCsCf7htsmfk5It-5ACNlWCwXLdHtZ3fE3Z6zSmQABee5yAqoggYwlvswuqiS_qmRXeDBWViMos" />
+                            <div
+                                class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface">
+                                <span class="material-symbols-outlined text-2xl">favorite</span>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-xl h-60 bg-surface-variant">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                data-alt="Slow pouring of golden hot clarified desi ghee into an antique bronze cooking pot with roasted gram flour and green cardamom pods, artisanal craftsmanship"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc_fxa5fhnq2ksRU-TDhmaiZCcV_osVdi6S0ghw6JSnYvZkSTtwN74eNLGpxsBM5JRrS6sOfTClujHV4DrvR6xTchFCU9HKa3xZqjBJgne_bqkVaE4bH7IVfdE4MG5wOqd9W1Z6Y1qOZEImRB-mqHHNGODUZ0RgDxiht46fxof-xT-FdMY65HuZ9rsmyIWg2FEkgZrsZMEyfpwWmc8hH5OtdZfHdX1C4f-fhNGW_g" />
+                            <div
+                                class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface">
+                                <span class="material-symbols-outlined text-2xl">favorite</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Interactive JavaScript -->
+            <script>
+                function selectWeight(btn, weight, price) {
+                    const card = btn.closest('.product-card');
+                    if (!card) return;
+
+                    // Update button visual states
+                    const allButtons = card.querySelectorAll('.weight-btn');
+                    allButtons.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-surface', 'font-bold');
+                        b.classList.add('bg-surface-container', 'text-on-surface', 'font-medium');
+                    });
+                    btn.classList.add('bg-primary', 'text-surface', 'font-bold');
+                    btn.classList.remove('bg-surface-container', 'text-on-surface', 'font-medium');
+
+                    // Update displayed price
+                    const priceElem = card.querySelector('.product-price');
+                    if (priceElem) {
+                        priceElem.textContent = '₹' + price;
+                    }
+
+                    // Store selected weight on the card dataset
+                    card.dataset.selectedWeight = weight;
+                    card.dataset.selectedPrice = price;
+                }
+
+                function addToCart(productName, btn) {
+                    const card = btn.closest('.product-card');
+                    let weight = '500g';
+                    let price = '';
+                    if (card) {
+                        weight = card.dataset.selectedWeight || '250g';
+                        const priceElem = card.querySelector('.product-price');
+                        price = priceElem ? priceElem.textContent : '';
+                    }
+
+                    const toast = document.getElementById('cartToast');
+                    const toastMsg = document.getElementById('toastMessage');
+                    if (toast && toastMsg) {
+                        toastMsg.textContent = `${productName} (${weight}) added &bull; ${price}`;
+                        toast.classList.remove('translate-y-32', 'opacity-0');
+                        toast.classList.add('translate-y-0', 'opacity-100');
+
+                        setTimeout(() => {
+                            toast.classList.add('translate-y-32', 'opacity-0');
+                            toast.classList.remove('translate-y-0', 'opacity-100');
+                        }, 3600);
+                    }
+                }
+
+                function toggleWishlist(btn) {
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    if (!icon) return;
+
+                    if (btn.classList.contains('text-error')) {
+                        btn.classList.remove('text-error');
+                        btn.classList.add('text-on-surface-variant');
+                        icon.style.fontVariationSettings = "'FILL' 0";
+                    } else {
+                        btn.classList.add('text-error');
+                        btn.classList.remove('text-on-surface-variant');
+                        icon.style.fontVariationSettings = "'FILL' 1";
+                    }
+                }
+
+                function curateHamperToast() {
+                    const toast = document.getElementById('cartToast');
+                    const toastMsg = document.getElementById('toastMessage');
+                    if (toast && toastMsg) {
+                        toastMsg.textContent = "Custom Sovereign Box curated with 4 signature sweets & code MITHAASROYAL applied!";
+                        toast.classList.remove('translate-y-32', 'opacity-0');
+                        toast.classList.add('translate-y-0', 'opacity-100');
+
+                        setTimeout(() => {
+                            toast.classList.add('translate-y-32', 'opacity-0');
+                            toast.classList.remove('translate-y-0', 'opacity-100');
+                        }, 4000);
+                    }
+                }
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-primary text-surface pt-space-2xl pb-space-lg">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-6 pb-space-2xl mb-space-2xl bg-primary-container/40 p-space-lg rounded-xl">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed">
+                        <span class="material-symbols-outlined text-2xl">verified</span></div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm text-surface font-semibold">100% Desi Ghee</h4>
+                        <p class="font-body-sm text-xs text-surface/70">Artisanal churned purity</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed">
+                        <span class="material-symbols-outlined text-2xl">workspace_premium</span></div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm text-surface font-semibold">FSSAI Certified</h4>
+                        <p class="font-body-sm text-xs text-surface/70">Standardized laboratory grade</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed">
+                        <span class="material-symbols-outlined text-2xl">lock</span></div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm text-surface font-semibold">Tamper-Proof Box</h4>
+                        <p class="font-body-sm text-xs text-surface/70">Embossed gold royal seal</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed">
+                        <span class="material-symbols-outlined text-2xl">ac_unit</span></div>
+                    <div>
+                        <h4 class="font-headline-sm text-sm text-surface font-semibold">Climate-Controlled</h4>
+                        <p class="font-body-sm text-xs text-surface/70">Insulated express transit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-2xl">
+                <div class="lg:col-span-2 pr-0 lg:pr-space-lg">
+                    <div class="flex items-center gap-3 mb-space-md"><img alt="MITHAAS Royal Logo"
+                            class="h-9 w-auto object-contain brightness-0 invert"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1XBWGBPYKOIZS6Uzcnuv1xE4PIqq9fqdaxdwU1VOmhcqVoFqHKmxpQk6P1iPCKmwhx2GyB6Zrxd3MLzuojsCFZzVCKfIMrsFab2FhfA1vwdlAnONRdpHvnT6zGjm0aI-TJbN9nMouMhbJkB5NiLIx9rn2vD15fticX-vCrJ4Poc9XyI_i-ebXBFUkQsFN78x04tlhrFpcg546cXT5jP5NYbH4n6wukX9iYvN7vc86Fh" /><span
+                            class="font-headline-md text-surface tracking-wide">MITHAAS</span></div>
+                    <p class="font-body-md text-sm text-surface/80 leading-relaxed mb-space-md">Curators of royal Indian
+                        confectionery heritage since 1942. Handcrafting heirloom sweets with slow-churned pure cow desi
+                        ghee, hand-harvested organic saffron, and authentic edible silver leaf (vark) fit for regal
+                        banquets.</p>
+                    <div class="flex items-center gap-3 text-secondary-fixed"><span
+                            class="material-symbols-outlined">shield_with_heart</span><span
+                            class="font-label-sm text-xs tracking-wider uppercase text-surface/90">The Sovereign Purity
+                            Guarantee</span></div>
+                </div>
+                <div>
+                    <h3 class="font-headline-sm text-sm uppercase tracking-widest text-secondary-fixed mb-space-md">
+                        Royal Collections</h3>
+                    <ul class="space-y-space-xs font-body-sm text-sm text-surface/80">
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="categories" href="#">Kaju
+                                Katli &amp; Pistachio</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="categories"
+                                href="#">Shahi Bengali Delicacies</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="categories" href="#">Ghee
+                                Roasted Barfi</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="festive-gift-hampers"
+                                href="#">Festive Gift Hampers</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="corporate-gifting"
+                                href="#">Corporate Bespoke Gifting</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="heritage-story"
+                                href="#">Purity &amp; Nutrition Audits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-headline-sm text-sm uppercase tracking-widest text-secondary-fixed mb-space-md">
+                        Concierge &amp; Stores</h3>
+                    <ul class="space-y-space-xs font-body-sm text-sm text-surface/80">
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">Delhi
+                                Durbar Flagship</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">Mumbai
+                                Bandra Atelier</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">Jaipur
+                                Johari Haveli</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact"
+                                href="#">Bengaluru &amp; Dubai Boutiques</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">FAQs
+                                &amp; Shipping Concierge</a></li>
+                        <li><a class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">Chilled
+                                Delivery &amp; Returns</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col">
+                    <h3 class="font-headline-sm text-sm uppercase tracking-widest text-secondary-fixed mb-space-md">
+                        Royal Gazette</h3>
+                    <p class="font-body-sm text-xs text-surface/80 mb-space-sm">Subscribe to the Royal Confectionery
+                        Gazette. Receive festive releases and enjoy 10% privilege on your first curation.</p>
+                    <form class="flex flex-col gap-2" onsubmit="return false;"><input
+                            class="bg-surface/10 rounded-lg px-3 py-2 text-xs font-body-sm text-surface placeholder:text-surface/50 focus:outline-none focus:bg-surface/20 transition-all"
+                            placeholder="Enter your royal address..." type="email" /><button
+                            class="bg-secondary text-surface hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-all font-label-lg text-xs uppercase tracking-wider py-2 rounded-lg font-bold flex items-center justify-center gap-1"
+                            type="button"><span>Subscribe</span><span
+                                class="material-symbols-outlined text-sm">send</span></button></form>
+                </div>
+            </div>
+            <div
+                class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-xs text-surface/60 border-t border-surface/10">
+                <p>© 2025 MITHAAS Royal Indian Sweet Atelier. All rights reserved.</p>
+                <div class="flex items-center gap-6"><a class="hover:text-secondary-fixed transition-colors"
+                        data-path="heritage-story" href="#">Heirloom Recipes</a><a
+                        class="hover:text-secondary-fixed transition-colors" data-path="contact" href="#">Privacy
+                        Charter</a><a class="hover:text-secondary-fixed transition-colors" data-path="contact"
+                        href="#">Terms of Service</a><a class="hover:text-secondary-fixed transition-colors"
+                        data-path="contact" href="#">Boutique Locator</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
